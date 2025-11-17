@@ -1,0 +1,208 @@
+.method-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.3s;
+}
+
+.method-modal {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #999;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.method-title {
+  text-align: center;
+  background: linear-gradient(135deg, #FF6B9D 0%, #C8A2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.selected-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFE5F1 100%);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #FFD93D;
+}
+
+.plan-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+}
+
+.plan-price {
+  font-size: 1.5em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #FF6B9D 0%, #C8A2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.method-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 30px;
+}
+
+.method-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.method-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: white;
+}
+
+.method-btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wechat-btn {
+  border-color: #09BB07;
+}
+
+.wechat-btn:hover {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+}
+
+.alipay-btn {
+  border-color: #1677FF;
+}
+
+.alipay-btn:hover {
+  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+}
+
+.method-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wechat-icon {
+  background: linear-gradient(135deg, #09BB07 0%, #00D100 100%);
+  color: white;
+}
+
+.alipay-icon {
+  background: linear-gradient(135deg, #1677FF 0%, #00A0E9 100%);
+  color: white;
+}
+
+.method-icon svg {
+  width: 35px;
+  height: 35px;
+}
+
+.method-info {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.method-name {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.method-desc {
+  font-size: 0.9em;
+  color: #999;
+}
+
+.method-note {
+  text-align: center;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.method-note p {
+  font-size: 0.85em;
+  color: #999;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .method-modal {
+    padding: 30px 20px;
+  }
+
+  .method-title {
+    font-size: 1.5em;
+  }
+
+  .method-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .method-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+}

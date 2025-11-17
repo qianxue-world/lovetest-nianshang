@@ -1,0 +1,46 @@
+.result-screen {
+  text-align: center;
+}
+
+.result-screen h1 {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FFD93D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.result-type {
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #FF6B9D 0%, #C8A2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 20px 0;
+  text-shadow: 0 4px 10px rgba(255, 107, 157, 0.2);
+}
+
+.result-description {
+  color: #666;
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.result-description h3 {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FFD93D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 20px 0 10px 0;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .result-type {
+    font-size: 2em;
+  }
+}

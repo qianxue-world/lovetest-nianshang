@@ -1,0 +1,216 @@
+{
+  "app": {
+    "title": "Personality Test"
+  },
+  "start": {
+    "title": "MBTI Personality Test",
+    "whatIsMBTI": "What is MBTI?",
+    "mbtiIntro": "MBTI (Myers-Briggs Type Indicator) is a widely used personality assessment tool that categorizes people into 16 personality types through four dimensions. It helps you better understand your thinking patterns, decision-making style, and interaction with others.",
+    "feature1Title": "Scientific Classification",
+    "feature1Desc": "16 personality types based on psychology",
+    "feature2Title": "Deep Insights",
+    "feature2Desc": "Discover your strengths and growth areas",
+    "feature3Title": "Quick Test",
+    "feature3Desc": "Complete 8 questions in just 2 minutes",
+    "originalBy": "@潜学天下 Original Creator",
+    "originalWarning": "All other versions are imitations. Trust only the official version!",
+    "button": "🚀 Start Test"
+  },
+  "result": {
+    "title": "Your Personality Type",
+    "button": "Take Test Again",
+    "yourTraits": "Your Traits"
+  },
+  "personalities": {
+    "ESTJ": {
+      "name": "The Executive",
+      "description": "Organized, practical, and decisive. You excel at managing tasks and leading teams."
+    },
+    "ESTP": {
+      "name": "The Entrepreneur",
+      "description": "Energetic, perceptive, and spontaneous. You thrive on action and new experiences."
+    },
+    "ESFJ": {
+      "name": "The Consul",
+      "description": "Caring, social, and organized. You value harmony and helping others."
+    },
+    "ESFP": {
+      "name": "The Entertainer",
+      "description": "Outgoing, friendly, and spontaneous. You love being the center of attention."
+    },
+    "ENTJ": {
+      "name": "The Commander",
+      "description": "Bold, strategic, and strong-willed. You're a natural leader who loves challenges."
+    },
+    "ENTP": {
+      "name": "The Debater",
+      "description": "Quick-witted, innovative, and curious. You enjoy intellectual debates and new ideas."
+    },
+    "ENFJ": {
+      "name": "The Protagonist",
+      "description": "Charismatic, inspiring, and empathetic. You're passionate about helping others grow."
+    },
+    "ENFP": {
+      "name": "The Campaigner",
+      "description": "Enthusiastic, creative, and sociable. You see life as full of possibilities."
+    },
+    "ISTJ": {
+      "name": "The Logistician",
+      "description": "Practical, fact-minded, and reliable. You value tradition and order."
+    },
+    "ISTP": {
+      "name": "The Virtuoso",
+      "description": "Bold, practical, and experimental. You're a master of tools and techniques."
+    },
+    "ISFJ": {
+      "name": "The Defender",
+      "description": "Dedicated, warm, and protective. You're always ready to defend loved ones."
+    },
+    "ISFP": {
+      "name": "The Adventurer",
+      "description": "Flexible, charming, and artistic. You live in the moment and appreciate beauty."
+    },
+    "INTJ": {
+      "name": "The Architect",
+      "description": "Imaginative, strategic, and determined. You love developing innovative solutions."
+    },
+    "INTP": {
+      "name": "The Logician",
+      "description": "Innovative, curious, and analytical. You're always seeking to understand the world."
+    },
+    "INFJ": {
+      "name": "The Advocate",
+      "description": "Idealistic, organized, and insightful. You're driven by your values and vision."
+    },
+    "INFP": {
+      "name": "The Mediator",
+      "description": "Idealistic, loyal, and empathetic. You're guided by your values and seek harmony."
+    }
+  },
+  "traits": {
+    "E": {
+      "name": "Extraverted",
+      "description": "You gain energy from social interactions"
+    },
+    "I": {
+      "name": "Introverted",
+      "description": "You recharge through alone time"
+    },
+    "N": {
+      "name": "Intuitive",
+      "description": "You focus on patterns and possibilities"
+    },
+    "S": {
+      "name": "Sensing",
+      "description": "You focus on concrete facts and details"
+    },
+    "T": {
+      "name": "Thinking",
+      "description": "You make decisions based on logic"
+    },
+    "F": {
+      "name": "Feeling",
+      "description": "You make decisions based on values"
+    },
+    "J": {
+      "name": "Judging",
+      "description": "You prefer structure and planning"
+    },
+    "P": {
+      "name": "Perceiving",
+      "description": "You prefer flexibility and spontaneity"
+    }
+  },
+  "payment": {
+    "title": "🎉 Congratulations!",
+    "subtitle": "Choose your exclusive report package and unlock personality analysis",
+    "mostPopular": "Most Popular",
+    "recommended": "Recommended",
+    "vip": "VIP Exclusive",
+    "basicTitle": "Basic",
+    "basicFeature1": "Complete personality type report",
+    "basicFeature2": "Detailed analysis of 16 types",
+    "basicFeature3": "Personality strengths analysis",
+    "professionalTitle": "Professional",
+    "professionalFeature1": "All Basic features included",
+    "professionalFeature2": "Career development advice",
+    "professionalFeature3": "Suitable job recommendations",
+    "professionalFeature4": "Team collaboration analysis",
+    "premiumTitle": "Romance",
+    "premiumFeature1": "All Professional features included",
+    "premiumFeature2": "Love personality matching",
+    "premiumFeature3": "Emotional communication tips",
+    "premiumFeature4": "Ideal partner type",
+    "premiumFeature5": "Relationship maintenance guide",
+    "selectButton": "Select Now",
+    "paymentMethods": "Supported Payment Methods",
+    "wechat": "WeChat Pay",
+    "alipay": "Alipay",
+    "originalCreator": "Original Creator"
+  },
+  "paymentMethod": {
+    "title": "Choose Payment Method",
+    "subtitle": "Please select your payment method to complete the purchase",
+    "wechatDesc": "Pay with WeChat QR code",
+    "alipayDesc": "Pay with Alipay QR code",
+    "note": "Your exclusive report will be unlocked immediately after payment"
+  },
+  "questions": [
+    {
+      "question": "At a party, you tend to:",
+      "options": [
+        "Interact with many people, including strangers",
+        "Interact with a few close friends"
+      ]
+    },
+    {
+      "question": "You prefer to focus on:",
+      "options": [
+        "The big picture and possibilities",
+        "Facts and concrete details"
+      ]
+    },
+    {
+      "question": "When making decisions, you rely more on:",
+      "options": [
+        "Logic and objective analysis",
+        "Personal values and feelings"
+      ]
+    },
+    {
+      "question": "You prefer to:",
+      "options": [
+        "Have things decided and organized",
+        "Stay open to new options and be flexible"
+      ]
+    },
+    {
+      "question": "You get energy from:",
+      "options": [
+        "Being around other people",
+        "Spending time alone"
+      ]
+    },
+    {
+      "question": "You are more interested in:",
+      "options": [
+        "What could be and future possibilities",
+        "What is real and present"
+      ]
+    },
+    {
+      "question": "When solving problems, you:",
+      "options": [
+        "Use logical reasoning",
+        "Consider how it affects people"
+      ]
+    },
+    {
+      "question": "You prefer:",
+      "options": [
+        "Planning ahead and following schedules",
+        "Being spontaneous and adaptable"
+      ]
+    }
+  ]
+}

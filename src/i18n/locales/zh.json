@@ -1,0 +1,216 @@
+{
+  "app": {
+    "title": "性格测试"
+  },
+  "start": {
+    "title": "MBTI 性格测试",
+    "whatIsMBTI": "什么是 MBTI？",
+    "mbtiIntro": "MBTI（迈尔斯-布里格斯性格分类指标）是一种广泛使用的性格评估工具，通过四个维度将人们分为16种性格类型。它帮助您更好地了解自己的思维方式、决策风格和与他人的互动模式。",
+    "feature1Title": "科学分类",
+    "feature1Desc": "基于心理学理论的16种性格类型",
+    "feature2Title": "深入了解",
+    "feature2Desc": "发现您的优势和成长空间",
+    "feature3Title": "快速测试",
+    "feature3Desc": "仅需2分钟完成8道题",
+    "originalBy": "@潜学天下 唯一原创",
+    "originalWarning": "其他版本均为仿冒，请认准官方正版！",
+    "button": "🚀 开始测试"
+  },
+  "result": {
+    "title": "您的性格类型",
+    "button": "重新测试",
+    "yourTraits": "您的特质"
+  },
+  "personalities": {
+    "ESTJ": {
+      "name": "执行者",
+      "description": "有条理、务实、果断。您擅长管理任务和领导团队。"
+    },
+    "ESTP": {
+      "name": "企业家",
+      "description": "精力充沛、敏锐、自发。您在行动和新体验中茁壮成长。"
+    },
+    "ESFJ": {
+      "name": "执政官",
+      "description": "关怀、社交、有条理。您重视和谐并帮助他人。"
+    },
+    "ESFP": {
+      "name": "表演者",
+      "description": "外向、友好、自发。您喜欢成为关注的焦点。"
+    },
+    "ENTJ": {
+      "name": "指挥官",
+      "description": "大胆、战略性、意志坚强。您是天生的领导者，热爱挑战。"
+    },
+    "ENTP": {
+      "name": "辩论家",
+      "description": "机智、创新、好奇。您喜欢智力辩论和新想法。"
+    },
+    "ENFJ": {
+      "name": "主人公",
+      "description": "有魅力、鼓舞人心、富有同情心。您热衷于帮助他人成长。"
+    },
+    "ENFP": {
+      "name": "竞选者",
+      "description": "热情、有创造力、善于社交。您认为生活充满可能性。"
+    },
+    "ISTJ": {
+      "name": "物流师",
+      "description": "务实、注重事实、可靠。您重视传统和秩序。"
+    },
+    "ISTP": {
+      "name": "鉴赏家",
+      "description": "大胆、务实、实验性。您是工具和技术的大师。"
+    },
+    "ISFJ": {
+      "name": "守卫者",
+      "description": "专注、温暖、保护性强。您随时准备保护所爱的人。"
+    },
+    "ISFP": {
+      "name": "探险家",
+      "description": "灵活、迷人、艺术性。您活在当下，欣赏美。"
+    },
+    "INTJ": {
+      "name": "建筑师",
+      "description": "富有想象力、战略性、坚定。您喜欢开发创新解决方案。"
+    },
+    "INTP": {
+      "name": "逻辑学家",
+      "description": "创新、好奇、分析性。您总是寻求理解世界。"
+    },
+    "INFJ": {
+      "name": "提倡者",
+      "description": "理想主义、有条理、有洞察力。您受价值观和愿景驱动。"
+    },
+    "INFP": {
+      "name": "调停者",
+      "description": "理想主义、忠诚、富有同情心。您以价值观为指导，寻求和谐。"
+    }
+  },
+  "traits": {
+    "E": {
+      "name": "外向型",
+      "description": "您从社交互动中获得能量"
+    },
+    "I": {
+      "name": "内向型",
+      "description": "您通过独处时间充电"
+    },
+    "N": {
+      "name": "直觉型",
+      "description": "您关注模式和可能性"
+    },
+    "S": {
+      "name": "感觉型",
+      "description": "您关注具体事实和细节"
+    },
+    "T": {
+      "name": "思考型",
+      "description": "您基于逻辑做决定"
+    },
+    "F": {
+      "name": "情感型",
+      "description": "您基于价值观做决定"
+    },
+    "J": {
+      "name": "判断型",
+      "description": "您喜欢结构和计划"
+    },
+    "P": {
+      "name": "感知型",
+      "description": "您喜欢灵活性和自发性"
+    }
+  },
+  "payment": {
+    "title": "🎉 恭喜完成测试！",
+    "subtitle": "选择您的专属报告套餐，立即解锁性格分析",
+    "mostPopular": "最受欢迎",
+    "recommended": "强烈推荐",
+    "vip": "VIP专享",
+    "basicTitle": "基础版",
+    "basicFeature1": "完整性格类型报告",
+    "basicFeature2": "16种性格详细解析",
+    "basicFeature3": "性格优势分析",
+    "professionalTitle": "职业版",
+    "professionalFeature1": "包含基础版所有内容",
+    "professionalFeature2": "职业发展建议",
+    "professionalFeature3": "适合岗位推荐",
+    "professionalFeature4": "团队协作分析",
+    "premiumTitle": "恋爱版",
+    "premiumFeature1": "包含职业版所有内容",
+    "premiumFeature2": "恋爱性格匹配分析",
+    "premiumFeature3": "情感沟通建议",
+    "premiumFeature4": "理想伴侣类型",
+    "premiumFeature5": "关系维护指南",
+    "selectButton": "立即选择",
+    "paymentMethods": "支持以下支付方式",
+    "wechat": "微信支付",
+    "alipay": "支付宝",
+    "originalCreator": "唯一原创"
+  },
+  "paymentMethod": {
+    "title": "选择支付方式",
+    "subtitle": "请选择您的支付方式完成购买",
+    "wechatDesc": "使用微信扫码支付",
+    "alipayDesc": "使用支付宝扫码支付",
+    "note": "支付完成后将立即解锁您的专属报告"
+  },
+  "questions": [
+    {
+      "question": "在聚会上，您倾向于：",
+      "options": [
+        "与许多人互动，包括陌生人",
+        "与几个亲密的朋友互动"
+      ]
+    },
+    {
+      "question": "您更喜欢关注：",
+      "options": [
+        "大局和可能性",
+        "事实和具体细节"
+      ]
+    },
+    {
+      "question": "做决定时，您更依赖：",
+      "options": [
+        "逻辑和客观分析",
+        "个人价值观和感受"
+      ]
+    },
+    {
+      "question": "您更喜欢：",
+      "options": [
+        "把事情决定好并组织起来",
+        "对新选择保持开放和灵活"
+      ]
+    },
+    {
+      "question": "您从以下获得能量：",
+      "options": [
+        "与他人在一起",
+        "独处时间"
+      ]
+    },
+    {
+      "question": "您更感兴趣的是：",
+      "options": [
+        "可能发生的事和未来的可能性",
+        "真实和当下的事物"
+      ]
+    },
+    {
+      "question": "解决问题时，您：",
+      "options": [
+        "使用逻辑推理",
+        "考虑它如何影响人们"
+      ]
+    },
+    {
+      "question": "您更喜欢：",
+      "options": [
+        "提前计划并遵循时间表",
+        "自发和适应性强"
+      ]
+    }
+  ]
+}

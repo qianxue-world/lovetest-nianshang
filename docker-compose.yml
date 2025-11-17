@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mbti-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mbti-personality-test
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - mbti-network
+
+networks:
+  mbti-network:
+    driver: bridge
