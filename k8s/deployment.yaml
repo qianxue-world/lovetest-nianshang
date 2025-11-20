@@ -55,4 +55,9 @@ spec:
         env:
         - name: NODE_ENV
           value: "production"
+        - name: VITE_API_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: mbti-personality-test-config
+              key: API_BASE_URL
       restartPolicy: Always

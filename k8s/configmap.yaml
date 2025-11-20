@@ -6,6 +6,9 @@ metadata:
   labels:
     app: mbti-personality-test
 data:
+  # API Base URL for backend services
+  API_BASE_URL: "https://api.lovetest.com.cn"
+  
   nginx.conf: |
     server {
         listen 80;

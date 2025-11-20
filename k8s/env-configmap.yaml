@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mbti-env-config
+  namespace: mbti-test
+  labels:
+    app: mbti-personality-test
+data:
+  env-config.js: |
+    // Runtime environment configuration
+    window.ENV = {
+      VITE_API_BASE_URL: 'https://api.lovetest.com.cn'
+    };

@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StartScreen } from './components/StartScreen';
 import { QuestionScreen } from './components/QuestionScreen';
 import { ResultScreen } from './components/ResultScreen';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { PaymentModal } from './components/PaymentModal';
 import { PaymentMethodModal } from './components/PaymentMethodModal';
+import { ActivationError } from './components/ActivationError';
+import { ActivationService } from './services/activationService';
 import { Answers, PersonalityType, Trait } from './types';
 import './App.css';
 
@@ -20,8 +22,75 @@ function App() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [showMethodModal, setShowMethodModal] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<{ plan: 'basic' | 'professional' | 'premium'; price: string } | null>(null);
+  
+  // 激活码验证状态
+  const [isActivated, setIsActivated] = useState<boolean>(false);
+  const [activationError, setActivationError] = useState<string | null>(null);
+  const [activationCode, setActivationCode] = useState<string | null>(null);
+  const [isValidating, setIsValidating] = useState<boolean>(true);
 
   const totalQuestions = 8;
+
+  // 页面加载时验证激活码
+  useEffect(() => {
+    validateActivation();
+  }, []);
+
+  const validateActivation = async () => {
+    setIsValidating(true);
+
+    // 0. 开发环境检测 - 跳过激活码验证
+    if (ActivationService.isDevelopmentMode()) {
+      console.log('🔧 Development mode detected - skipping activation');
+      setIsActivated(true);
+      setActivationCode('DEV-MODE');
+      setIsValidating(false);
+      return;
+    }
+
+    // 1. 先检查本地存储的激活码
+    const savedActivation = ActivationService.getSavedActivationCode();
+    if (savedActivation) {
+      console.log('Using saved activation code:', savedActivation.code);
+      setIsActivated(true);
+      setActivationCode(savedActivation.code);
+      setIsValidating(false);
+      return;
+    }
+
+    // 2. 从URL获取激活码
+    const codeFromURL = ActivationService.getActivationCodeFromURL();
+    if (!codeFromURL) {
+      setActivationError('请使用有效的激活码访问此页面');
+      setIsActivated(false);
+      setIsValidating(false);
+      return;
+    }
+
+    setActivationCode(codeFromURL);
+
+    // 3. 向后端验证激活码
+    try {
+      const result = await ActivationService.validateActivationCode(codeFromURL);
+      
+      if (result.isValid && result.expiresAt) {
+        // 验证成功，保存到本地存储
+        ActivationService.saveActivationCode(codeFromURL, result.expiresAt);
+        setIsActivated(true);
+        setActivationError(null);
+      } else {
+        // 验证失败
+        setIsActivated(false);
+        setActivationError(result.message);
+      }
+    } catch (error) {
+      console.error('Activation validation failed:', error);
+      setIsActivated(false);
+      setActivationError('激活码验证失败，请稍后重试');
+    }
+
+    setIsValidating(false);
+  };
 
   const handleStart = () => {
     setScreen('question');
@@ -36,7 +105,9 @@ function App() {
     } else {
       const type = calculatePersonalityType(newAnswers);
       setPersonalityType(type);
-      setShowPaymentModal(true);
+      // 直接显示结果，跳过付费页面
+      setScreen('result');
+      // setShowPaymentModal(true); // 暂时隐藏付费功能
     }
   };
 
@@ -220,6 +291,33 @@ function App() {
     return { background: colorThemes[0] };
   };
 
+  // 显示加载状态
+  if (isValidating) {
+    return (
+      <div className="app" style={{ background: colorThemes[0] }}>
+        <div className="container" style={{ textAlign: 'center', padding: '100px 40px' }}>
+          <div style={{ fontSize: '3em', marginBottom: '20px' }}>⏳</div>
+          <h2 style={{ 
+            background: 'linear-gradient(135deg, #FF6B9D 0%, #C8A2FF 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            fontSize: '1.5em',
+            fontWeight: 'bold'
+          }}>
+            验证激活码中...
+          </h2>
+        </div>
+      </div>
+    );
+  }
+
+  // 显示激活错误
+  if (!isActivated && activationError) {
+    return <ActivationError message={activationError} code={activationCode || undefined} />;
+  }
+
+  // 激活成功，显示正常应用
   return (
     <div className="app" style={getBackgroundStyle()}>
       <LanguageSwitcher />

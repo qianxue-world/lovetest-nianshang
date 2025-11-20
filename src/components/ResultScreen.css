@@ -7,40 +7,195 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-weight: bold;
+  font-size: 1.8em;
 }
 
-.result-type {
-  font-size: 3em;
+/* 角色展示区 */
+.character-showcase {
+  border-radius: 25px;
+  padding: 40px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.character-icon {
+  font-size: 8em;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.result-type-large {
+  font-size: 3.5em;
   font-weight: bold;
+  color: white;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.1em;
+}
+
+/* 性格标签 */
+.personality-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.tag {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 性格描述 */
+.result-description {
+  text-align: left;
+  margin: 30px 0;
+}
+
+.personality-name {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.personality-desc {
+  color: #666;
+  font-size: 1.1em;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+/* 特质部分 */
+.traits-section {
+  margin-top: 40px;
+}
+
+.section-title {
   background: linear-gradient(135deg, #FF6B9D 0%, #C8A2FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin: 20px 0;
-  text-shadow: 0 4px 10px rgba(255, 107, 157, 0.2);
-}
-
-.result-description {
-  color: #666;
-  font-size: 1.1em;
-  line-height: 1.6;
-  margin: 30px 0;
-  text-align: left;
-}
-
-.result-description h3 {
-  background: linear-gradient(135deg, #FF6B9D 0%, #FFD93D 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 20px 0 10px 0;
+  font-size: 1.5em;
+  margin-bottom: 20px;
   font-weight: bold;
+  text-align: center;
+}
+
+.traits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.trait-card {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFE5F1 100%);
+  border: 2px solid #FFD93D;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.trait-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(255, 107, 157, 0.2);
+}
+
+.trait-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.trait-letter {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.trait-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+}
+
+.trait-desc {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 15px 50px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+  font-weight: 600;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
 }
 
 @media (max-width: 600px) {
-  .result-type {
-    font-size: 2em;
+  .character-icon {
+    font-size: 5em;
+  }
+
+  .result-type-large {
+    font-size: 2.5em;
+  }
+
+  .traits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .personality-name {
+    font-size: 1.5em;
+  }
+
+  .character-showcase {
+    padding: 30px 20px;
   }
 }

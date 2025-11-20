@@ -148,6 +148,19 @@
     "alipay": "Alipay",
     "originalCreator": "Original Creator"
   },
+  "activation": {
+    "errorTitle": "Invalid Activation Code",
+    "codeLabel": "Activation Code",
+    "contactHint": "To obtain an activation code, please contact",
+    "promoTitle": "🎁 Discover More Tests",
+    "promoMessage": "You haven't purchased an activation code yet. But don't worry, more fun tests are waiting for you!",
+    "followTitle": "Follow Us for More",
+    "feature1": "More professional psychological tests",
+    "feature2": "Exclusive personality analysis reports",
+    "feature3": "Regular updates with fun tests",
+    "codeHint": "The activation code you tried",
+    "footerText": "Follow @潜学天下 on Xiaohongshu for activation codes and more exciting content!"
+  },
   "paymentMethod": {
     "title": "Choose Payment Method",
     "subtitle": "Please select your payment method to complete the purchase",

@@ -148,6 +148,19 @@
     "alipay": "支付宝",
     "originalCreator": "唯一原创"
   },
+  "activation": {
+    "errorTitle": "激活码无效",
+    "codeLabel": "激活码",
+    "contactHint": "如需获取激活码，请联系",
+    "promoTitle": "🎁 发现更多精彩测试",
+    "promoMessage": "您还没有购买激活码，无法使用本测试。但别担心，更多好玩的测试等着你！",
+    "followTitle": "关注我们，解锁更多",
+    "feature1": "更多专业心理测试",
+    "feature2": "独家性格分析报告",
+    "feature3": "定期更新趣味测试",
+    "codeHint": "您尝试使用的激活码",
+    "footerText": "关注小红书 @潜学天下，获取激活码和更多精彩内容！"
+  },
   "paymentMethod": {
     "title": "选择支付方式",
     "subtitle": "请选择您的支付方式完成购买",
