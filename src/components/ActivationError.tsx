@@ -7,7 +7,7 @@ interface ActivationErrorProps {
   code?: string;
 }
 
-export const ActivationError: React.FC<ActivationErrorProps> = ({ message, code }) => {
+export const ActivationError: React.FC<ActivationErrorProps> = ({ code }) => {
   const { t } = useTranslation();
 
   return (
