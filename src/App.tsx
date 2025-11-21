@@ -266,12 +266,6 @@ function App() {
     return type as PersonalityType;
   };
 
-  const handleRestart = () => {
-    setScreen('start');
-    setCurrentQuestion(0);
-    setAnswers({ E: 0, I: 0, N: 0, S: 0, T: 0, F: 0, J: 0, P: 0 });
-  };
-
   // Dynamic color themes for each question - Red to Purple spectrum
   const colorThemes = [
     'linear-gradient(135deg, #FFD93D 0%, #FF6B9D 50%, #C8A2FF 100%)', // Yellow → Pink → Purple
