@@ -1,15 +1,15 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: mbti-personality-test-hpa
-  namespace: lovetest-mbti
+  name: lovetest-nianshang-hpa
+  namespace: lovetest-nianshang-ns
   labels:
-    app: mbti-personality-test
+    app: lovetest-nianshang
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: mbti-personality-test
+    name: lovetest-nianshang
   minReplicas: 2
   maxReplicas: 10
   metrics:

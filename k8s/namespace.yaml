@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: lovetest-mbti
+  name: lovetest-nianshang-ns
   labels:
-    name: lovetest-mbti
+    name: lovetest-nianshang-ns
     managed-by: argocd
