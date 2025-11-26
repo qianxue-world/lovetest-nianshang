@@ -18,7 +18,7 @@ resources:
 
 images:
 - name: omaticaya/lovetest-nianshang
-  newTag: 1.0.6
+  newTag: 1.0.7
 
 commonLabels:
   app: lovetest-nianshang
