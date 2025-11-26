@@ -108,9 +108,11 @@
 /* 分数说明 */
 .score-explanation {
   margin: 30px 0;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(255, 249, 230, 0.5) 0%, rgba(255, 229, 241, 0.5) 100%);
-  border-radius: 15px;
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.8) 0%, rgba(252, 228, 236, 0.8) 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(233, 30, 99, 0.2);
+  box-shadow: 0 3px 15px rgba(233, 30, 99, 0.1);
 }
 
 .score-scale {
@@ -118,23 +120,23 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
 }
 
 .scale-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.9em;
-  color: #666;
-  font-weight: 600;
+  gap: 10px;
+  font-size: 1.05em;
+  color: #C2185B;
+  font-weight: 700;
 }
 
 .scale-dot {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(233, 30, 99, 0.3);
 }
 
 /* 结果描述 */
@@ -144,10 +146,11 @@
 }
 
 .result-title {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: #E91E63;
   animation: titleFadeIn 0.8s ease-out;
 }
 
@@ -163,16 +166,18 @@
 }
 
 .result-text {
-  font-size: 1.15em;
-  line-height: 1.8;
-  color: #444;
+  font-size: 1.35em;
+  line-height: 2;
+  color: #C2185B;
+  font-weight: 600;
   text-align: center;
-  padding: 25px;
-  background: linear-gradient(135deg, rgba(255, 249, 230, 0.6) 0%, rgba(255, 229, 241, 0.6) 100%);
-  border-radius: 15px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.9) 0%, rgba(252, 228, 236, 0.9) 100%);
+  border-radius: 20px;
   margin-bottom: 30px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 20px rgba(233, 30, 99, 0.15);
   animation: textSlideIn 0.8s ease-out 0.2s both;
+  border: 2px solid rgba(233, 30, 99, 0.2);
 }
 
 @keyframes textSlideIn {
@@ -188,12 +193,13 @@
 
 /* 详细分析 */
 .detailed-analysis {
-  background: linear-gradient(135deg, #FFF9E6 0%, #FFE5F1 100%);
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4EC 100%);
   border-radius: 20px;
-  padding: 25px;
+  padding: 30px;
   margin-bottom: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 25px rgba(233, 30, 99, 0.15);
   animation: analysisSlideIn 0.8s ease-out 0.4s both;
+  border: 2px solid rgba(233, 30, 99, 0.15);
 }
 
 @keyframes analysisSlideIn {
@@ -208,37 +214,40 @@
 }
 
 .analysis-title {
-  font-size: 1.4em;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 15px;
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #E91E63;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .analysis-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
 .analysis-content p {
-  font-size: 1.05em;
-  line-height: 1.7;
-  color: #555;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
+  font-size: 1.2em;
+  line-height: 1.9;
+  color: #C2185B;
+  font-weight: 600;
+  padding: 15px 22px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
   margin: 0;
-  border-left: 4px solid #FF6B9D;
+  border-left: 5px solid #E91E63;
+  box-shadow: 0 2px 10px rgba(233, 30, 99, 0.1);
 }
 
 /* 建议部分 */
 .suggestions {
-  background: linear-gradient(135deg, #FFE5F1 0%, #E5F3FF 100%);
+  background: linear-gradient(135deg, #FFE4EC 0%, #FFF0F5 100%);
   border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-shadow: 0 5px 25px rgba(233, 30, 99, 0.15);
   animation: suggestionsSlideIn 0.8s ease-out 0.6s both;
+  border: 2px solid rgba(233, 30, 99, 0.15);
 }
 
 @keyframes suggestionsSlideIn {
@@ -253,21 +262,23 @@
 }
 
 .suggestions-title {
-  font-size: 1.4em;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 15px;
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #E91E63;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .suggestions-content {
-  font-size: 1.05em;
-  line-height: 1.8;
-  color: #555;
-  padding: 18px 22px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  border: 2px dashed #C8A2FF;
+  font-size: 1.2em;
+  line-height: 2;
+  color: #C2185B;
+  font-weight: 600;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  border: 3px dashed #F06292;
+  box-shadow: 0 2px 10px rgba(233, 30, 99, 0.1);
 }
 
 .suggestions-content p {

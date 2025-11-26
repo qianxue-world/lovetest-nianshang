@@ -283,16 +283,16 @@ function App() {
     return { score: finalScore, level, description };
   };
 
-  // Dynamic color themes for each question - Red to Purple spectrum
+  // Dynamic color themes for each question - Rose and Pink spectrum
   const colorThemes = [
-    'linear-gradient(135deg, #FFD93D 0%, #FF6B9D 50%, #C8A2FF 100%)', // Yellow → Pink → Purple
-    'linear-gradient(135deg, #FF6B9D 0%, #FF8BA7 50%, #FFB6C1 100%)', // Pink → Light Pink → Pastel Pink
-    'linear-gradient(135deg, #C8A2FF 0%, #B47AEA 50%, #9D5BD2 100%)', // Light Purple → Medium Purple → Deep Purple
-    'linear-gradient(135deg, #FF4757 0%, #FF6B9D 50%, #C8A2FF 100%)', // Red → Pink → Purple
-    'linear-gradient(135deg, #FFD93D 0%, #FFA07A 50%, #FF6B9D 100%)', // Yellow → Coral → Pink
-    'linear-gradient(135deg, #FF8BA7 0%, #C8A2FF 50%, #9D5BD2 100%)', // Light Pink → Purple → Deep Purple
-    'linear-gradient(135deg, #FF6B9D 0%, #E056FD 50%, #C8A2FF 100%)', // Pink → Magenta → Purple
-    'linear-gradient(135deg, #FFA07A 0%, #FF6B9D 50%, #B47AEA 100%)', // Coral → Pink → Purple
+    'linear-gradient(135deg, #FFB6D9 0%, #FF6B9D 50%, #E91E63 100%)', // Light Pink → Pink → Rose
+    'linear-gradient(135deg, #FF8BA7 0%, #F06292 50%, #EC407A 100%)', // Pink → Medium Pink → Deep Pink
+    'linear-gradient(135deg, #FFE4EC 0%, #FFB6D9 50%, #FF6B9D 100%)', // Pale Pink → Light Pink → Pink
+    'linear-gradient(135deg, #F06292 0%, #E91E63 50%, #C2185B 100%)', // Medium Pink → Rose → Deep Rose
+    'linear-gradient(135deg, #FFD1DC 0%, #FFB6D9 50%, #FF8BA7 100%)', // Pastel Pink → Light Pink → Pink
+    'linear-gradient(135deg, #FF6B9D 0%, #E91E63 50%, #D81B60 100%)', // Pink → Rose → Deep Rose
+    'linear-gradient(135deg, #FFC1CC 0%, #FF8BA7 50%, #F06292 100%)', // Light Pink → Pink → Medium Pink
+    'linear-gradient(135deg, #E91E63 0%, #C2185B 50%, #AD1457 100%)', // Rose → Deep Rose → Dark Rose
   ];
 
   const getBackgroundStyle = () => {

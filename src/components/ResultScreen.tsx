@@ -9,15 +9,15 @@ interface ResultScreenProps {
 export const ResultScreen: React.FC<ResultScreenProps> = ({ result }) => {
   const getGradientColor = (score: number) => {
     if (score <= 20) {
-      return 'linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%)'; // 蓝色 - 年下
+      return 'linear-gradient(135deg, #FFB6D9 0%, #FF8BA7 100%)'; // 浅粉 - 年下
     } else if (score <= 40) {
-      return 'linear-gradient(135deg, #43E97B 0%, #38F9D7 100%)'; // 青色 - 偏年下
+      return 'linear-gradient(135deg, #FF8BA7 0%, #FF6B9D 100%)'; // 粉色 - 偏年下
     } else if (score <= 60) {
-      return 'linear-gradient(135deg, #FFD93D 0%, #FF6B9D 100%)'; // 黄粉色 - 同龄
+      return 'linear-gradient(135deg, #FF6B9D 0%, #F06292 100%)'; // 玫瑰粉 - 同龄
     } else if (score <= 80) {
-      return 'linear-gradient(135deg, #FF6B9D 0%, #C8A2FF 100%)'; // 粉紫色 - 偏年上
+      return 'linear-gradient(135deg, #F06292 0%, #E91E63 100%)'; // 玫瑰红 - 偏年上
     } else {
-      return 'linear-gradient(135deg, #C8A2FF 0%, #9D5BD2 100%)'; // 紫色 - 年上
+      return 'linear-gradient(135deg, #E91E63 0%, #C2185B 100%)'; // 深玫瑰红 - 年上
     }
   };
 
@@ -61,15 +61,15 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ result }) => {
       <div className="score-explanation">
         <div className="score-scale">
           <div className="scale-item">
-            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%)' }}></div>
+            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #FFB6D9 0%, #FF8BA7 100%)' }}></div>
             <span>0 - 极度年下</span>
           </div>
           <div className="scale-item">
-            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #FFD93D 0%, #FF6B9D 100%)' }}></div>
+            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #FF6B9D 0%, #F06292 100%)' }}></div>
             <span>50 - 同龄</span>
           </div>
           <div className="scale-item">
-            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #C8A2FF 0%, #9D5BD2 100%)' }}></div>
+            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #E91E63 0%, #C2185B 100%)' }}></div>
             <span>100 - 极度年上</span>
           </div>
         </div>
@@ -77,8 +77,8 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ result }) => {
 
       {/* 结果描述 */}
       <div className="result-description">
-        <h2 className="result-title" style={{ background: gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-          你的年龄偏好
+        <h2 className="result-title">
+          💕 你的年龄偏好 💕
         </h2>
         <p className="result-text">{result.description}</p>
         
