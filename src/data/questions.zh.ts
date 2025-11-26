@@ -1,550 +1,184 @@
 import { Question } from '../types';
 
 export const questionsZh: Question[] = [
-  // E vs I 问题 (0-14)
   {
-    question: "姐妹聚会时，你是哪种人？",
+    question: "深夜失眠时，你更想找谁聊天？",
     options: [
-      { text: "社交牛逼症！见谁都能聊三小时 🦋", trait: "E" },
-      { text: "默默找个角落当隐形人 📱", trait: "I" },
-      { text: "带头玩游戏嗨翻全场 🎉", trait: "E" },
-      { text: "守着零食桌专心干饭 🍰", trait: "I" }
+      { text: "成熟稳重的大哥哥，给我人生建议 🌙", score: 2 },
+      { text: "阳光活力的小奶狗，陪我玩游戏 🎮", score: -2 },
+      { text: "同龄的闺蜜，互相吐槽 💬", score: 0 },
+      { text: "比我大几岁的，有点经验但不会说教 ☕", score: 1 }
     ]
   },
   {
-    question: "周五晚上你最想：",
+    question: "理想的约会对象，你希望他：",
     options: [
-      { text: "约姐妹们唱K嗨到天亮！🎤", trait: "E" },
-      { text: "窝在家刷剧吃外卖躺平 🛋️", trait: "I" },
-      { text: "组局剧本杀/密室逃脱 🎲", trait: "E" },
-      { text: "敷面膜做美甲享受独处时光 💅", trait: "I" }
+      { text: "事业有成，能给我安全感和指导 💼", score: 2 },
+      { text: "青春洋溢，和我一起探索世界 🌈", score: -2 },
+      { text: "和我差不多，共同成长 🌱", score: 0 },
+      { text: "比我成熟一点，但不会有代沟 🎯", score: 1 }
     ]
   },
   {
-    question: "手机突然响了，你的反应：",
+    question: "遇到工作难题时，你更希望对方：",
     options: [
-      { text: "秒接！说不定有瓜吃 📞", trait: "E" },
-      { text: "盯着手机陷入灵魂拷问 😰", trait: "I" },
-      { text: "直接视频通话更有感觉 📹", trait: "E" },
-      { text: "挂掉秒发微信：打字说 💬", trait: "I" }
+      { text: "用丰富经验帮我分析解决 📊", score: 2 },
+      { text: "陪我一起头脑风暴想办法 💡", score: -1 },
+      { text: "和我站在同一视角讨论 🤝", score: 0 },
+      { text: "给我一些建议但让我自己决定 💭", score: 1 }
     ]
   },
   {
-    question: "累了一天后，你需要：",
+    question: "吵架后，你希望对方：",
     options: [
-      { text: "找闺蜜疯狂倒垃圾 🗣️", trait: "E" },
-      { text: "躲被窝里当社恐鸵鸟 🛏️", trait: "I" },
-      { text: "约姐妹喝奶茶逛街解压 🧋", trait: "E" },
-      { text: "一个人安静地放空发呆 🌙", trait: "I" }
+      { text: "像长辈一样包容我，主动哄我 🤗", score: 2 },
+      { text: "像小孩一样先服软求和好 🥺", score: -2 },
+      { text: "平等沟通，互相理解 💕", score: 0 },
+      { text: "成熟地分析问题，但也照顾我情绪 🌸", score: 1 }
     ]
   },
   {
-    question: "小组作业时，你是：",
+    question: "周末约会，你更喜欢：",
     options: [
-      { text: "主动当组长指挥全场 📋", trait: "E" },
-      { text: "默默把活全干了不吭声 😮‍💨", trait: "I" },
-      { text: "负责汇报展示C位出道 🎤", trait: "E" },
-      { text: "写文档发群里就完事 📄", trait: "I" }
+      { text: "他安排好一切，我只需要美美地出现 👗", score: 2 },
+      { text: "我们一起临时起意，想到哪玩到哪 🎪", score: -1 },
+      { text: "两个人商量着来，各出主意 🎨", score: 0 },
+      { text: "他提供几个选项，我来做最终决定 🎯", score: 1 }
     ]
   },
   {
-    question: "理想的旅行是：",
+    question: "生病时，你希望对方：",
     options: [
-      { text: "跟团游认识新姐妹 🚌", trait: "E" },
-      { text: "一个人说走就走特种兵 ✈️", trait: "I" },
-      { text: "约姐妹组团拍照打卡 👯", trait: "E" },
-      { text: "找个安静地方躺平摆烂 🏖️", trait: "I" }
+      { text: "像爸爸一样照顾我，什么都安排好 🏥", score: 2 },
+      { text: "陪在我身边撒娇卖萌逗我开心 🤒", score: -2 },
+      { text: "互相照顾，一起面对 💊", score: 0 },
+      { text: "细心照顾但不会过度紧张 🌡️", score: 1 }
     ]
   },
   {
-    question: "遇到陌生人时：",
+    question: "对方的朋友圈，你更喜欢看到：",
     options: [
-      { text: "自来熟开始唠嗑加微信 💬", trait: "E" },
-      { text: "社恐发作原地石化装死 😰", trait: "I" },
-      { text: "主动搭讪问东问西 🤔", trait: "E" },
-      { text: "礼貌微笑保持安全距离 😊", trait: "I" }
+      { text: "成熟的生活方式和人生感悟 📖", score: 2 },
+      { text: "青春活力的日常和搞笑视频 🎬", score: -2 },
+      { text: "和我相似的生活状态 📱", score: 0 },
+      { text: "有深度但不沉闷的内容 🎭", score: 1 }
     ]
   },
   {
-    question: "什么时候最有精神：",
+    question: "经济方面，你期待：",
     options: [
-      { text: "人多热闹嗨起来的时候 🎊", trait: "E" },
-      { text: "一个人独处充电的时候 🌙", trait: "I" },
-      { text: "蹦迪/演唱会现场尖叫 🎵", trait: "E" },
-      { text: "安静做自己喜欢的事 📖", trait: "I" }
+      { text: "他经济独立稳定，能给我依靠 💰", score: 2 },
+      { text: "我们一起奋斗，共同成长 🌟", score: -1 },
+      { text: "各自独立，AA制也OK 💳", score: 0 },
+      { text: "他稍微稳定一些，但不需要太大差距 💼", score: 1 }
     ]
   },
   {
-    question: "有心事的时候：",
+    question: "聊天话题上，你更喜欢：",
     options: [
-      { text: "找人疯狂倒苦水 🗣️", trait: "E" },
-      { text: "写小作文发泄情绪 📝", trait: "I" },
-      { text: "群发消息求抱抱 📱", trait: "E" },
-      { text: "自己默默消化内耗 🤫", trait: "I" }
+      { text: "他给我讲人生经验和见识 🗣️", score: 2 },
+      { text: "一起追最新的梗和热点 🔥", score: -2 },
+      { text: "聊我们共同感兴趣的话题 💬", score: 0 },
+      { text: "既能聊深度话题也能开玩笑 🎪", score: 1 }
     ]
   },
   {
-    question: "在餐厅点餐：",
+    question: "面对你的小情绪，你希望他：",
     options: [
-      { text: "和服务员唠嗑问推荐 💬", trait: "E" },
-      { text: "手指菜单不说话社恐 👉", trait: "I" },
-      { text: "问这个好吃吗那个辣不辣 🍽️", trait: "E" },
-      { text: "提前在美团研究好 📱", trait: "I" }
+      { text: "像长辈一样耐心开导我 🌈", score: 2 },
+      { text: "和我一起疯一起闹发泄情绪 🎉", score: -2 },
+      { text: "理解我，和我一起分析 🤔", score: 0 },
+      { text: "给我空间但也适时安慰 🌙", score: 1 }
     ]
   },
   {
-    question: "你喜欢的工作环境：",
+    question: "关于未来规划，你希望：",
     options: [
-      { text: "开放式办公室热热闹闹 🏢", trait: "E" },
-      { text: "戴耳机隔绝世界沉浸 🎧", trait: "I" },
-      { text: "咖啡厅有人气有氛围 ☕", trait: "E" },
-      { text: "在家办公最舒服自在 🏠", trait: "I" }
+      { text: "他有清晰规划，带着我一起走 🗺️", score: 2 },
+      { text: "我们一起探索，边走边看 🚀", score: -1 },
+      { text: "各自有目标，互相支持 🎯", score: 0 },
+      { text: "他有想法但也尊重我的意见 💭", score: 1 }
     ]
   },
   {
-    question: "有好消息时：",
+    question: "他的穿衣风格，你更喜欢：",
     options: [
-      { text: "立刻分享给所有人！📣", trait: "E" },
-      { text: "自己偷偷开心傻笑 😊", trait: "I" },
-      { text: "发朋友圈昭告天下 📱", trait: "E" },
-      { text: "写在日记本里珍藏 📔", trait: "I" }
+      { text: "成熟稳重的商务风 👔", score: 2 },
+      { text: "青春阳光的运动风 👟", score: -2 },
+      { text: "和我风格相近的休闲风 👕", score: 0 },
+      { text: "简约大方的都市风 🧥", score: 1 }
     ]
   },
   {
-    question: "对于社交活动：",
+    question: "做决定时，你希望他：",
     options: [
-      { text: "冲冲冲！机会来了 🎉", trait: "E" },
-      { text: "能不去就不去求放过 😓", trait: "I" },
-      { text: "加微信！以后约起来 📇", trait: "E" },
-      { text: "线上聊聊就够了 💬", trait: "I" }
+      { text: "果断决策，我跟着就好 ✅", score: 2 },
+      { text: "我们一起讨论，谁都可以做主 🎲", score: -1 },
+      { text: "平等商量，共同决定 🤝", score: 0 },
+      { text: "给建议但最终尊重我的选择 💡", score: 1 }
     ]
   },
   {
-    question: "午饭时间：",
+    question: "他的社交圈，你希望：",
     options: [
-      { text: "约同事一起吃饭唠嗑 🍱", trait: "E" },
-      { text: "终于能一个人了耶 🥪", trait: "I" },
-      { text: "组织下午茶局喝奶茶 🧋", trait: "E" },
-      { text: "点外卖工位默默吃 💻", trait: "I" }
+      { text: "都是成熟稳重的朋友，有质量的社交 🍷", score: 2 },
+      { text: "年轻活力的朋友，经常组局玩 🎊", score: -2 },
+      { text: "和我的朋友圈差不多 👥", score: 0 },
+      { text: "有深度的朋友，但也不会太严肃 ☕", score: 1 }
     ]
   },
   {
-    question: "你交朋友靠：",
+    question: "恋爱中的相处模式，你更喜欢：",
     options: [
-      { text: "主动搭讪自来熟 👋", trait: "E" },
-      { text: "等缘分自然而然来 🌸", trait: "I" },
-      { text: "参加各种活动认识 🎯", trait: "E" },
-      { text: "慢慢熟悉再深交 📚", trait: "I" }
-    ]
-  },
-
-  // N vs S 问题 (15-29)
-  {
-    question: "你爱看的小说/剧：",
-    options: [
-      { text: "玄幻修仙爽文一口气看完 🐉", trait: "N" },
-      { text: "现实题材都市剧接地气 🏙️", trait: "S" },
-      { text: "穿越重生脑洞大开 ⏰", trait: "N" },
-      { text: "纪录片真实故事有意义 📺", trait: "S" }
+      { text: "他主导，我被宠爱的感觉 👑", score: 2 },
+      { text: "像朋友一样打打闹闹 🎮", score: -2 },
+      { text: "平等相处，互相尊重 💕", score: 0 },
+      { text: "他稍微主导，但也听我的想法 🌸", score: 1 }
     ]
   },
   {
-    question: "照着菜谱做饭：",
+    question: "他的兴趣爱好，你希望：",
     options: [
-      { text: "随便加点料搞创新 🎨", trait: "N" },
-      { text: "严格按克数精准操作 ⚖️", trait: "S" },
-      { text: "凭感觉乱炖反正能吃 🍲", trait: "N" },
-      { text: "每一步都要量好 📏", trait: "S" }
+      { text: "成熟的爱好，比如品酒、摄影 📷", score: 2 },
+      { text: "年轻的爱好，比如电竞、说唱 🎧", score: -2 },
+      { text: "和我兴趣相投 🎨", score: 0 },
+      { text: "有品位但不会太小众 🎵", score: 1 }
     ]
   },
   {
-    question: "你更关注：",
+    question: "面对你的任性，你希望他：",
     options: [
-      { text: "未来有什么可能性 🌟", trait: "N" },
-      { text: "现在实际发生的事 📊", trait: "S" },
-      { text: "脑洞大开各种想象 💭", trait: "N" },
-      { text: "眼见为实的东西 👀", trait: "S" }
+      { text: "像长辈一样包容纵容我 🎁", score: 2 },
+      { text: "和我一起任性一起疯 🎪", score: -2 },
+      { text: "理解但也会提醒我 💭", score: 0 },
+      { text: "大部分时候包容，偶尔温柔提醒 🌺", score: 1 }
     ]
   },
   {
-    question: "学新技能时：",
+    question: "送礼物时，你希望他：",
     options: [
-      { text: "先看整体框架再说 🖼️", trait: "N" },
-      { text: "从基础一步一步来 1️⃣", trait: "S" },
-      { text: "想象学会后的样子 ✨", trait: "N" },
-      { text: "抠细节慢慢练习 🔍", trait: "S" }
+      { text: "送贵重有品质的礼物 💎", score: 2 },
+      { text: "送有创意有趣的小礼物 🎁", score: -1 },
+      { text: "送我们都喜欢的东西 🎀", score: 0 },
+      { text: "送实用又有心意的礼物 🌹", score: 1 }
     ]
   },
   {
-    question: "理想的工作是：",
+    question: "他的生活状态，你期待：",
     options: [
-      { text: "搞创意想各种点子 💡", trait: "N" },
-      { text: "实打实干活有成就感 🔧", trait: "S" },
-      { text: "做没人做过的新鲜事 🚀", trait: "N" },
-      { text: "用成熟靠谱的方法 📋", trait: "S" }
+      { text: "生活稳定，有自己的节奏 🏠", score: 2 },
+      { text: "充满变化，每天都有新鲜事 🌈", score: -2 },
+      { text: "和我差不多的生活节奏 ⏰", score: 0 },
+      { text: "稳定但不无聊，偶尔有惊喜 ✨", score: 1 }
     ]
   },
   {
-    question: "你更相信：",
+    question: "最打动你的是：",
     options: [
-      { text: "第六感和直觉玄学 🔮", trait: "N" },
-      { text: "眼见为实看得见的 👀", trait: "S" },
-      { text: "玄学和缘分命中注定 🌙", trait: "N" },
-      { text: "数据和证据摆在那 📊", trait: "S" }
-    ]
-  },
-  {
-    question: "和姐妹描述一件事：",
-    options: [
-      { text: "用各种比喻夸张修辞 🎭", trait: "N" },
-      { text: "就事论事说重点 📝", trait: "S" },
-      { text: "讲得跟写小说一样 📖", trait: "N" },
-      { text: "列123说得清清楚楚 📋", trait: "S" }
-    ]
-  },
-  {
-    question: "你更喜欢：",
-    options: [
-      { text: "脑洞大开的想法 🌌", trait: "N" },
-      { text: "实实在在看得见的东西 💎", trait: "S" },
-      { text: "理论和抽象概念 🧠", trait: "N" },
-      { text: "能实际用上的技能 🛠️", trait: "S" }
-    ]
-  },
-  {
-    question: "逛街买衣服：",
-    options: [
-      { text: "看到啥都想试试 ✨", trait: "N" },
-      { text: "只买计划好的不乱买 📝", trait: "S" },
-      { text: "脑补各种穿搭场景 👗", trait: "N" },
-      { text: "看质量和性价比 💰", trait: "S" }
-    ]
-  },
-  {
-    question: "你记得的是：",
-    options: [
-      { text: "整体感觉和氛围感 🌈", trait: "N" },
-      { text: "具体发生了什么事 📌", trait: "S" },
-      { text: "当时的vibe和感觉 ✨", trait: "N" },
-      { text: "谁说了什么话细节 💬", trait: "S" }
-    ]
-  },
-  {
-    question: "给别人指路：",
-    options: [
-      { text: "就那个啥旁边你懂的 🤷", trait: "N" },
-      { text: "第二个路口左转直走 📍", trait: "S" },
-      { text: "你到了就知道了相信我 🧭", trait: "N" },
-      { text: "发定位最准确不迷路 📱", trait: "S" }
-    ]
-  },
-  {
-    question: "你喜欢的艺术风格：",
-    options: [
-      { text: "抽象派看不懂但觉得牛 🎨", trait: "N" },
-      { text: "写实派画得像照片 🖼️", trait: "S" },
-      { text: "有深意能解读半天 🌟", trait: "N" },
-      { text: "清清楚楚明明白白 📐", trait: "S" }
-    ]
-  },
-  {
-    question: "遇到问题你会：",
-    options: [
-      { text: "想各种奇葩办法试试 💡", trait: "N" },
-      { text: "用靠谱的老方法稳妥 ✅", trait: "S" },
-      { text: "头脑风暴一通乱想 🌪️", trait: "N" },
-      { text: "照着教程一步步来 📚", trait: "S" }
-    ]
-  },
-  {
-    question: "你被激励的是：",
-    options: [
-      { text: "无限可能性想想就激动 🌠", trait: "N" },
-      { text: "实际的成绩看得见 🏆", trait: "S" },
-      { text: "未来的梦想和愿景 🔮", trait: "N" },
-      { text: "现在的成就和进步 📊", trait: "S" }
-    ]
-  },
-  {
-    question: "看说明书：",
-    options: [
-      { text: "扫一眼就开始干 🦅", trait: "N" },
-      { text: "一字一句认真看完 📖", trait: "S" },
-      { text: "边做边摸索反正能行 🎲", trait: "N" },
-      { text: "按步骤来不出错 👣", trait: "S" }
-    ]
-  },
-
-  // T vs F 问题 (30-44)
-  {
-    question: "闺蜜失恋哭唧唧时：",
-    options: [
-      { text: "帮她分析渣男问题 🧩", trait: "T" },
-      { text: "抱抱她陪她哭 🤗", trait: "F" },
-      { text: "理性分析不合适的原因 🔍", trait: "T" },
-      { text: "倾听共情说我懂你 💕", trait: "F" }
-    ]
-  },
-  {
-    question: "你做决定主要靠：",
-    options: [
-      { text: "逻辑和理性分析 🧠", trait: "T" },
-      { text: "感觉和别人的感受 ❤️", trait: "F" },
-      { text: "客观数据和事实 📊", trait: "T" },
-      { text: "个人价值观和心意 🌟", trait: "F" }
-    ]
-  },
-  {
-    question: "和姐妹争论时：",
-    options: [
-      { text: "摆事实讲道理 📚", trait: "T" },
-      { text: "考虑她的感受 💭", trait: "F" },
-      { text: "用逻辑说服她 🏆", trait: "T" },
-      { text: "算了和气最重要 🕊️", trait: "F" }
-    ]
-  },
-  {
-    question: "你更重视：",
-    options: [
-      { text: "真相和准确性 ✓", trait: "T" },
-      { text: "善良和照顾感受 💝", trait: "F" },
-      { text: "对就是对错就是错 🎯", trait: "T" },
-      { text: "友善和温柔 😊", trait: "F" }
-    ]
-  },
-  {
-    question: "给姐妹提意见时：",
-    options: [
-      { text: "直接说问题在哪 📢", trait: "T" },
-      { text: "温柔鼓励式提醒 🌸", trait: "F" },
-      { text: "专注于怎么改进 📈", trait: "T" },
-      { text: "先夸再说不足 👏", trait: "F" }
-    ]
-  },
-  {
-    question: "你更关心：",
-    options: [
-      { text: "公平公正对事不对人 ⚖️", trait: "T" },
-      { text: "同情心和共情能力 💗", trait: "F" },
-      { text: "正义必须伸张 👨‍⚖️", trait: "T" },
-      { text: "仁慈和善良 🙏", trait: "F" }
-    ]
-  },
-  {
-    question: "遇到突发状况时：",
-    options: [
-      { text: "保持冷静理性分析 🧊", trait: "T" },
-      { text: "先安慰身边的人 🤲", trait: "F" },
-      { text: "快速找到解决方案 🔧", trait: "T" },
-      { text: "检查每个人是否还好 💚", trait: "F" }
-    ]
-  },
-  {
-    question: "你更擅长：",
-    options: [
-      { text: "批判性思维分析 🤔", trait: "T" },
-      { text: "理解别人的情绪 💫", trait: "F" },
-      { text: "分析数据找规律 📉", trait: "T" },
-      { text: "读懂人心察言观色 👥", trait: "F" }
-    ]
-  },
-  {
-    question: "当有人说错话时：",
-    options: [
-      { text: "立即纠正指出来 ✋", trait: "T" },
-      { text: "算了和气最重要 ☮️", trait: "F" },
-      { text: "解释为什么不对 📝", trait: "T" },
-      { text: "考虑对方面子 💭", trait: "F" }
-    ]
-  },
-  {
-    question: "你更喜欢的电影：",
-    options: [
-      { text: "烧脑悬疑让你思考 🧠", trait: "T" },
-      { text: "催泪感人让你哭 😢", trait: "F" },
-      { text: "有情节反转的 🔄", trait: "T" },
-      { text: "有情感深度的 💔", trait: "F" }
-    ]
-  },
-  {
-    question: "你的优势是：",
-    options: [
-      { text: "客观推理能力强 🎓", trait: "T" },
-      { text: "情商高会做人 🌈", trait: "F" },
-      { text: "解决问题能力 🧩", trait: "T" },
-      { text: "同理心和共情 🤝", trait: "F" }
-    ]
-  },
-  {
-    question: "你的动力来自：",
-    options: [
-      { text: "成就和能力提升 🏅", trait: "T" },
-      { text: "和谐的人际关系 🔗", trait: "F" },
-      { text: "追求卓越完美 💎", trait: "T" },
-      { text: "维护好关系 👫", trait: "F" }
-    ]
-  },
-  {
-    question: "被批评时：",
-    options: [
-      { text: "评估批评是否有道理 🔍", trait: "T" },
-      { text: "感到受伤难过 💔", trait: "F" },
-      { text: "用逻辑反驳辩护 🛡️", trait: "T" },
-      { text: "担心对方是不是不喜欢我了 😟", trait: "F" }
-    ]
-  },
-  {
-    question: "你宁愿被别人：",
-    options: [
-      { text: "尊重认可 🎖️", trait: "T" },
-      { text: "喜爱疼爱 💖", trait: "F" },
-      { text: "认为有能力靠谱 💪", trait: "T" },
-      { text: "欣赏和喜欢 🌺", trait: "F" }
-    ]
-  },
-  {
-    question: "你的沟通风格：",
-    options: [
-      { text: "直接清晰不绕弯 📍", trait: "T" },
-      { text: "温暖友好很亲切 🌞", trait: "F" },
-      { text: "高效简洁说重点 ⚡", trait: "T" },
-      { text: "体贴温柔照顾感受 💝", trait: "F" }
-    ]
-  },
-  // J vs P 问题 (45-59)
-  {
-    question: "你的房间是：",
-    options: [
-      { text: "像样板间一样整齐 �️", trait: "J" },
-      { text: "乱中有序的艺术 🌪️", trait: "P" },
-      { text: "每样东西都有固定位置 📦", trait: "J" },
-      { text: "看着乱但我知道东西在哪 🗺️", trait: "P" }
-    ]
-  },
-  {
-    question: "计划旅行：",
-    options: [
-      { text: "提前几个月做攻略 📅", trait: "J" },
-      { text: "订机票其他随缘 ✈️", trait: "P" },
-      { text: "做Excel表格精确到分钟 📊", trait: "J" },
-      { text: "到了再说看心情 🍃", trait: "P" }
-    ]
-  },
-  {
-    question: "对于截止日期：",
-    options: [
-      { text: "提前一周就完成 📆", trait: "J" },
-      { text: "什么截止日期？😅", trait: "P" },
-      { text: "神圣不可侵犯必须守 ⏰", trait: "J" },
-      { text: "就是个建议而已 🤷", trait: "P" }
-    ]
-  },
-  {
-    question: "你的日历看起来像：",
-    options: [
-      { text: "颜色编码超完美 🌈", trait: "J" },
-      { text: "什么日历没听说过 📱", trait: "P" },
-      { text: "精确到每一分钟 ⏱️", trait: "J" },
-      { text: "模糊的想法记在脑子里 💭", trait: "P" }
-    ]
-  },
-  {
-    question: "逛街购物时：",
-    options: [
-      { text: "列清单控预算完成 ✅", trait: "J" },
-      { text: "哇这个好看买买买 🤩", trait: "P" },
-      { text: "严格按计划不乱买 📝", trait: "J" },
-      { text: "随便逛逛看看 🔍", trait: "P" }
-    ]
-  },
-  {
-    question: "你更喜欢：",
-    options: [
-      { text: "有规律有计划 🏗️", trait: "J" },
-      { text: "自由自在随心所欲 🦋", trait: "P" },
-      { text: "可预测的生活 📊", trait: "J" },
-      { text: "灵活多变的生活 🤸", trait: "P" }
-    ]
-  },
-  {
-    question: "开始新项目：",
-    options: [
-      { text: "先做详细计划 📋", trait: "J" },
-      { text: "直接开干边做边想 🏊", trait: "P" },
-      { text: "创建详细大纲 📑", trait: "J" },
-      { text: "开始了再说看着办 🎲", trait: "P" }
-    ]
-  },
-  {
-    question: "你的工作桌面：",
-    options: [
-      { text: "每样东西都在固定位置 📌", trait: "J" },
-      { text: "乱中有序的混乱 🎨", trait: "P" },
-      { text: "极简整洁强迫症 🧹", trait: "J" },
-      { text: "创意杂乱但有灵感 🖍️", trait: "P" }
-    ]
-  },
-  {
-    question: "做决定时：",
-    options: [
-      { text: "快速决定不纠结 ⚡", trait: "J" },
-      { text: "保持选项开放再看看 🚪", trait: "P" },
-      { text: "决定了就坚持 🎯", trait: "J" },
-      { text: "随时可能改变主意 🔄", trait: "P" }
-    ]
-  },
-  {
-    question: "你的早晨routine：",
-    options: [
-      { text: "每天都一样固定流程 ☀️", trait: "J" },
-      { text: "每天都不一样看心情 🌅", trait: "P" },
-      { text: "精确计时不能乱 ⏰", trait: "J" },
-      { text: "取决于今天的vibe 🎵", trait: "P" }
-    ]
-  },
-  {
-    question: "打包行李箱：",
-    options: [
-      { text: "提前几天列清单慢慢装 🧳", trait: "J" },
-      { text: "出发前一小时狂塞 👕", trait: "P" },
-      { text: "分类整理收纳袋 📦", trait: "J" },
-      { text: "能塞下啥就塞啥 🎒", trait: "P" }
-    ]
-  },
-  {
-    question: "你感觉最舒服的时候：",
-    options: [
-      { text: "一切都安排妥当 ✓", trait: "J" },
-      { text: "保持开放随时可变 🌟", trait: "P" },
-      { text: "计划定好心里踏实 📅", trait: "J" },
-      { text: "随心所欲想干啥干啥 🎭", trait: "P" }
-    ]
-  },
-  {
-    question: "你的待办清单：",
-    options: [
-      { text: "详细分类有优先级 📝", trait: "J" },
-      { text: "脑子里记着差不多 🧠", trait: "P" },
-      { text: "完成一项打勾超爽 ✅", trait: "J" },
-      { text: "就是给自己的建议 💡", trait: "P" }
-    ]
-  },
-  {
-    question: "当计划突然改变时：",
-    options: [
-      { text: "天哪！要重新安排！😰", trait: "J" },
-      { text: "哇塞！新的冒险！🎉", trait: "P" },
-      { text: "立刻重新规划一切 🔄", trait: "J" },
-      { text: "无所谓随便啦 🌊", trait: "P" }
-    ]
-  },
-  {
-    question: "你工作效率最高的时候：",
-    options: [
-      { text: "有明确deadline压着 📆", trait: "J" },
-      { text: "最后一分钟爆发小宇宙 ⏰", trait: "P" },
-      { text: "稳定按计划推进 🐢", trait: "J" },
-      { text: "灵感突然爆发 ⚡", trait: "P" }
+      { text: "成熟稳重，给我安全感和依靠 🛡️", score: 2 },
+      { text: "青春活力，和我一起疯一起笑 🌟", score: -2 },
+      { text: "志同道合，我们是最好的伙伴 🤝", score: 0 },
+      { text: "温柔体贴，懂我但不会管太多 💝", score: 1 }
     ]
   }
 ];

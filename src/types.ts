@@ -5,29 +5,11 @@ export interface Question {
 
 export interface Option {
   text: string;
-  trait: Trait;
+  score: number; // 分数：-2(极度年下), -1(年下), 0(同龄), 1(年上), 2(极度年上)
 }
 
-export type Trait = 'E' | 'I' | 'N' | 'S' | 'T' | 'F' | 'J' | 'P';
-
-export type PersonalityType = 
-  | 'ESTJ' | 'ESTP' | 'ESFJ' | 'ESFP'
-  | 'ENTJ' | 'ENTP' | 'ENFJ' | 'ENFP'
-  | 'ISTJ' | 'ISTP' | 'ISFJ' | 'ISFP'
-  | 'INTJ' | 'INTP' | 'INFJ' | 'INFP';
-
-export interface PersonalityInfo {
-  name: string;
+export interface AgePreferenceResult {
+  score: number; // 0-100的分数
+  level: 'extreme_younger' | 'younger' | 'same_age' | 'older' | 'extreme_older';
   description: string;
-}
-
-export interface Answers {
-  E: number;
-  I: number;
-  N: number;
-  S: number;
-  T: number;
-  F: number;
-  J: number;
-  P: number;
 }

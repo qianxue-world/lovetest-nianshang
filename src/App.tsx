@@ -6,7 +6,7 @@ import { PaymentModal } from './components/PaymentModal';
 import { PaymentMethodModal } from './components/PaymentMethodModal';
 import { ActivationError } from './components/ActivationError';
 import { ActivationService } from './services/activationService';
-import { Answers, PersonalityType, Trait } from './types';
+import { AgePreferenceResult } from './types';
 import './App.css';
 
 type Screen = 'start' | 'question' | 'result';
@@ -14,10 +14,8 @@ type Screen = 'start' | 'question' | 'result';
 function App() {
   const [screen, setScreen] = useState<Screen>('start');
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState<Answers>({
-    E: 0, I: 0, N: 0, S: 0, T: 0, F: 0, J: 0, P: 0
-  });
-  const [personalityType, setPersonalityType] = useState<PersonalityType>('INFP');
+  const [totalScore, setTotalScore] = useState(0);
+  const [result, setResult] = useState<AgePreferenceResult | null>(null);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [showMethodModal, setShowMethodModal] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<{ plan: 'basic' | 'professional' | 'premium'; price: string } | null>(null);
@@ -28,7 +26,7 @@ function App() {
   const [activationCode, setActivationCode] = useState<string | null>(null);
   const [isValidating, setIsValidating] = useState<boolean>(true);
 
-  const totalQuestions = 60;
+  const totalQuestions = 20;
 
   // 页面加载时验证激活码
   useEffect(() => {
@@ -95,15 +93,15 @@ function App() {
     setScreen('question');
   };
 
-  const handleAnswer = (trait: Trait) => {
-    const newAnswers = { ...answers, [trait]: answers[trait] + 1 };
-    setAnswers(newAnswers);
+  const handleAnswer = (score: number) => {
+    const newTotalScore = totalScore + score;
+    setTotalScore(newTotalScore);
 
     if (currentQuestion < totalQuestions - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      const type = calculatePersonalityType(newAnswers);
-      setPersonalityType(type);
+      const finalResult = calculateAgePreference(newTotalScore);
+      setResult(finalResult);
       // 直接显示结果，跳过付费页面
       setScreen('result');
       // setShowPaymentModal(true); // 暂时隐藏付费功能
@@ -256,13 +254,33 @@ function App() {
     // 不关闭套餐选择弹窗，让用户可以重新选择
   };
 
-  const calculatePersonalityType = (ans: Answers): PersonalityType => {
-    let type = '';
-    type += ans.E > ans.I ? 'E' : 'I';
-    type += ans.N > ans.S ? 'N' : 'S';
-    type += ans.T > ans.F ? 'T' : 'F';
-    type += ans.J > ans.P ? 'J' : 'P';
-    return type as PersonalityType;
+  const calculateAgePreference = (score: number): AgePreferenceResult => {
+    // 分数范围：-40 到 +40 (20题 × 每题-2到+2)
+    // 转换为 0-100 的分数：0表示极度年下，50表示同龄，100表示极度年上
+    const normalizedScore = Math.round(((score + 40) / 80) * 100);
+    const finalScore = Math.max(0, Math.min(100, normalizedScore));
+    
+    let level: AgePreferenceResult['level'];
+    let description: string;
+    
+    if (finalScore <= 20) {
+      level = 'extreme_younger';
+      description = '你是标准的"年下控"！喜欢充满活力、阳光可爱的小奶狗。你享受在恋爱中占据主导地位，喜欢被崇拜和依赖的感觉。年轻的他们能给你带来青春的活力和无限的新鲜感。';
+    } else if (finalScore <= 40) {
+      level = 'younger';
+      description = '你偏好年龄比你小的对象。你喜欢那种轻松自在、没有压力的相处模式，享受和对方一起成长的过程。你不需要对方太成熟，反而觉得年轻的活力更有吸引力。';
+    } else if (finalScore <= 60) {
+      level = 'same_age';
+      description = '你更倾向于同龄人！你重视平等的关系，希望和对方站在同一视角看世界。你们有相似的经历和话题，能够互相理解，共同成长。这种势均力敌的感觉让你最舒服。';
+    } else if (finalScore <= 80) {
+      level = 'older';
+      description = '你偏好年龄比你大的对象。你欣赏成熟稳重的魅力，希望对方能给你一定的安全感和指导。但你也不希望年龄差距太大，更喜欢那种温柔体贴、懂你但不会管太多的感觉。';
+    } else {
+      level = 'extreme_older';
+      description = '你是"年上控"！你被成熟稳重、有人生阅历的大叔深深吸引。你渴望被照顾、被宠爱的感觉，希望对方能像长辈一样给你安全感和依靠。年龄带来的成熟魅力对你来说是致命的吸引力。';
+    }
+    
+    return { score: finalScore, level, description };
   };
 
   // Dynamic color themes for each question - Red to Purple spectrum
@@ -323,11 +341,8 @@ function App() {
             onAnswer={handleAnswer}
           />
         )}
-        {screen === 'result' && (
-          <ResultScreen
-            personalityType={personalityType}
-            answers={answers}
-          />
+        {screen === 'result' && result && (
+          <ResultScreen result={result} />
         )}
         <div className="card-watermark">@潜学天下</div>
       </div>

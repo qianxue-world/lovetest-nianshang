@@ -1,229 +1,145 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { PersonalityType, Answers } from '../types';
-import { mbtiCharacters, mbtiColors } from '../data/mbtiCharacters';
+import { AgePreferenceResult } from '../types';
 import './ResultScreen.css';
 
 interface ResultScreenProps {
-  personalityType: PersonalityType;
-  answers?: Answers;
+  result: AgePreferenceResult;
 }
 
-export const ResultScreen: React.FC<ResultScreenProps> = ({
-  personalityType,
-  answers,
-}) => {
-  const { t } = useTranslation();
-  
-  const character = mbtiCharacters[personalityType] || '🎭';
-  const colors = mbtiColors[personalityType] || { primary: '#FF6B9D', secondary: '#C8A2FF', gradient: 'linear-gradient(135deg, #FF6B9D 0%, #C8A2FF 100%)' };
-
-  // 计算每个维度的指示器位置（0-100，左边是第一个特质，右边是第二个特质）
-  const calculateIndicatorPositions = () => {
-    // 检查是否有有效的答案数据
-    const hasValidAnswers = answers && (
-      answers.E + answers.I + answers.N + answers.S + 
-      answers.T + answers.F + answers.J + answers.P
-    ) > 0;
-
-    if (!hasValidAnswers) {
-      // 如果没有答案数据，根据性格类型设置默认位置
-      const traits = personalityType.split('');
-      return {
-        EI: traits[0] === 'E' ? 25 : 75, // E人偏左(25%)，I人偏右(75%)
-        NS: traits[1] === 'N' ? 25 : 75, // N人偏左(25%)，S人偏右(75%)
-        TF: traits[2] === 'T' ? 25 : 75, // T人偏左(25%)，F人偏右(75%)
-        JP: traits[3] === 'J' ? 25 : 75, // J人偏左(25%)，P人偏右(75%)
-      };
+export const ResultScreen: React.FC<ResultScreenProps> = ({ result }) => {
+  const getGradientColor = (score: number) => {
+    if (score <= 20) {
+      return 'linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%)'; // 蓝色 - 年下
+    } else if (score <= 40) {
+      return 'linear-gradient(135deg, #43E97B 0%, #38F9D7 100%)'; // 青色 - 偏年下
+    } else if (score <= 60) {
+      return 'linear-gradient(135deg, #FFD93D 0%, #FF6B9D 100%)'; // 黄粉色 - 同龄
+    } else if (score <= 80) {
+      return 'linear-gradient(135deg, #FF6B9D 0%, #C8A2FF 100%)'; // 粉紫色 - 偏年上
+    } else {
+      return 'linear-gradient(135deg, #C8A2FF 0%, #9D5BD2 100%)'; // 紫色 - 年上
     }
-    
-    const totalPerDimension = 15; // 每个维度15道题
-    
-    // 计算每个维度的位置
-    // 注意：位置需要反转，因为左边是第一个特质(E/N/T/J)，右边是第二个特质(I/S/F/P)
-    // 如果E多，应该偏左(小百分比)；如果I多，应该偏右(大百分比)
-    // 所以我们用第二个特质的百分比作为位置
-    const calculatePosition = (secondValue: number) => {
-      // 使用第二个特质的百分比，这样第一个特质多时位置偏左，第二个特质多时位置偏右
-      const percentage = Math.round((secondValue / totalPerDimension) * 100);
-      // 如果正好是50%，根据实际值微调
-      if (percentage === 50) {
-        return secondValue > 7.5 ? 52 : 48;
-      }
-      return percentage;
-    };
-
-    return {
-      EI: calculatePosition(answers!.I), // 用I的百分比，I多则偏右
-      NS: calculatePosition(answers!.S), // 用S的百分比，S多则偏右
-      TF: calculatePosition(answers!.F), // 用F的百分比，F多则偏右
-      JP: calculatePosition(answers!.P), // 用P的百分比，P多则偏右
-    };
   };
 
-  const positions = calculateIndicatorPositions();
+  const getLevelText = (level: AgePreferenceResult['level']) => {
+    const levelMap = {
+      'extreme_younger': '极度年下控',
+      'younger': '偏好年下',
+      'same_age': '同龄最佳',
+      'older': '偏好年上',
+      'extreme_older': '极度年上控'
+    };
+    return levelMap[level];
+  };
 
-  // 调试信息
-  console.log('ResultScreen - Personality Type:', personalityType);
-  console.log('ResultScreen - Answers:', answers);
-  console.log('ResultScreen - Indicator Positions:', positions);
+  const gradient = getGradientColor(result.score);
 
   return (
-    <div className="result-screen">
-      {/* SVG Banner */}
-      <div className="personality-banner">
-        <img 
-          src={`/assets/${personalityType}.svg`} 
-          alt={`${personalityType} personality banner`}
-          className="banner-image"
-          onError={(e) => {
-            // Fallback to character showcase if SVG not found
-            e.currentTarget.style.display = 'none';
-            const fallback = document.querySelector('.character-showcase-fallback');
-            if (fallback) {
-              (fallback as HTMLElement).style.display = 'flex';
-            }
-          }}
-        />
-        {/* Fallback character showcase */}
-        <div className="character-showcase-fallback" style={{ background: colors.gradient, display: 'none' }}>
-          <div className="character-icon">{character}</div>
-          <div className="result-type-large">{personalityType}</div>
+    <div className="result-screen age-preference">
+      {/* 大爱心展示 */}
+      <div className="heart-container">
+        <svg className="heart-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: gradient.match(/#[0-9A-F]{6}/gi)?.[0] || '#FF6B9D' }} />
+              <stop offset="100%" style={{ stopColor: gradient.match(/#[0-9A-F]{6}/gi)?.[1] || '#C8A2FF' }} />
+            </linearGradient>
+          </defs>
+          <path
+            d="M100,170 C100,170 30,120 30,80 C30,60 45,45 65,45 C80,45 90,55 100,70 C110,55 120,45 135,45 C155,45 170,60 170,80 C170,120 100,170 100,170 Z"
+            fill="url(#heartGradient)"
+            className="heart-path"
+          />
+        </svg>
+        <div className="score-overlay">
+          <div className="score-number">{result.score}</div>
+          <div className="score-label">{getLevelText(result.level)}</div>
         </div>
       </div>
 
-      {/* 性格描述 */}
+      {/* 分数说明 */}
+      <div className="score-explanation">
+        <div className="score-scale">
+          <div className="scale-item">
+            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%)' }}></div>
+            <span>0 - 极度年下</span>
+          </div>
+          <div className="scale-item">
+            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #FFD93D 0%, #FF6B9D 100%)' }}></div>
+            <span>50 - 同龄</span>
+          </div>
+          <div className="scale-item">
+            <div className="scale-dot" style={{ background: 'linear-gradient(135deg, #C8A2FF 0%, #9D5BD2 100%)' }}></div>
+            <span>100 - 极度年上</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 结果描述 */}
       <div className="result-description">
-        {/* 大号字母展示 */}
-        <div className="personality-type-display">
-          <div className="personality-letters" style={{ 
-            background: colors.gradient,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
-            {personalityType}
-          </div>
-        </div>
-        <p className="personality-desc">{t(`personalities.${personalityType}.description`)}</p>
-        {/* 夸夸气泡 */}
-          <div className="praise-bubble">
-            <span className="praise-text">{t(`personalities.${personalityType}.praise`)}</span>
-          </div>
-        {/* 特质数据统计 */}
-        <div className="traits-section">
-          <div className="traits-stats">
-            {/* E vs I */}
-            <div className="trait-stat-item">
-              <div className="trait-stat-labels">
-                <span className="trait-label">
-                  <span className="trait-letter-small" style={{ color: colors.primary }}>E</span>
-                  {t('traits.E.name')}
-                </span>
-                <span className="trait-label">
-                  {t('traits.I.name')}
-                  <span className="trait-letter-small" style={{ color: colors.primary }}>I</span>
-                </span>
-              </div>
-              <div className="trait-slider">
-                <div className="slider-track"></div>
-                <div 
-                  className="slider-indicator" 
-                  style={{ 
-                    left: `${positions.EI}%`,
-                    background: colors.gradient 
-                  }}
-                ></div>
-              </div>
-            </div>
-
-            {/* N vs S */}
-            <div className="trait-stat-item">
-              <div className="trait-stat-labels">
-                <span className="trait-label">
-                  <span className="trait-letter-small" style={{ color: colors.primary }}>N</span>
-                  {t('traits.N.name')}
-                </span>
-                <span className="trait-label">
-                  {t('traits.S.name')}
-                  <span className="trait-letter-small" style={{ color: colors.primary }}>S</span>
-                </span>
-              </div>
-              <div className="trait-slider">
-                <div className="slider-track"></div>
-                <div 
-                  className="slider-indicator" 
-                  style={{ 
-                    left: `${positions.NS}%`,
-                    background: colors.gradient 
-                  }}
-                ></div>
-              </div>
-            </div>
-
-            {/* T vs F */}
-            <div className="trait-stat-item">
-              <div className="trait-stat-labels">
-                <span className="trait-label">
-                  <span className="trait-letter-small" style={{ color: colors.primary }}>T</span>
-                  {t('traits.T.name')}
-                </span>
-                <span className="trait-label">
-                  {t('traits.F.name')}
-                  <span className="trait-letter-small" style={{ color: colors.primary }}>F</span>
-                </span>
-              </div>
-              <div className="trait-slider">
-                <div className="slider-track"></div>
-                <div 
-                  className="slider-indicator" 
-                  style={{ 
-                    left: `${positions.TF}%`,
-                    background: colors.gradient 
-                  }}
-                ></div>
-              </div>
-            </div>
-
-            {/* J vs P */}
-            <div className="trait-stat-item">
-              <div className="trait-stat-labels">
-                <span className="trait-label">
-                  <span className="trait-letter-small" style={{ color: colors.primary }}>J</span>
-                  {t('traits.J.name')}
-                </span>
-                <span className="trait-label">
-                  {t('traits.P.name')}
-                  <span className="trait-letter-small" style={{ color: colors.primary }}>P</span>
-                </span>
-              </div>
-              <div className="trait-slider">
-                <div className="slider-track"></div>
-                <div 
-                  className="slider-indicator" 
-                  style={{ 
-                    left: `${positions.JP}%`,
-                    background: colors.gradient 
-                  }}
-                ></div>
-              </div>
-            </div>
+        <h2 className="result-title" style={{ background: gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          你的年龄偏好
+        </h2>
+        <p className="result-text">{result.description}</p>
+        
+        {/* 详细解读 */}
+        <div className="detailed-analysis">
+          <h3 className="analysis-title">💡 这意味着什么？</h3>
+          <div className="analysis-content">
+            {result.score <= 20 && (
+              <>
+                <p>🌟 你享受在关系中的主导地位，喜欢照顾和引导对方</p>
+                <p>💫 年轻的活力和新鲜感对你来说非常重要</p>
+                <p>🎯 你可能更喜欢被崇拜和依赖的感觉</p>
+              </>
+            )}
+            {result.score > 20 && result.score <= 40 && (
+              <>
+                <p>🌟 你喜欢轻松自在的相处模式，不喜欢太多压力</p>
+                <p>💫 和对方一起成长的过程让你感到快乐</p>
+                <p>🎯 你欣赏年轻带来的活力和可塑性</p>
+              </>
+            )}
+            {result.score > 40 && result.score <= 60 && (
+              <>
+                <p>🌟 你重视平等和相互理解的关系</p>
+                <p>💫 共同的经历和话题让你们更容易产生共鸣</p>
+                <p>🎯 你喜欢势均力敌、共同成长的感觉</p>
+              </>
+            )}
+            {result.score > 60 && result.score <= 80 && (
+              <>
+                <p>🌟 你欣赏成熟带来的稳重和可靠</p>
+                <p>💫 你希望对方能给你一定的指导和支持</p>
+                <p>🎯 但你也重视平等，不希望被过度保护</p>
+              </>
+            )}
+            {result.score > 80 && (
+              <>
+                <p>🌟 你深深被成熟稳重的魅力所吸引</p>
+                <p>💫 你渴望被照顾、被宠爱的安全感</p>
+                <p>🎯 人生阅历和经验对你来说是重要的吸引力</p>
+              </>
+            )}
           </div>
         </div>
 
-        {/* 生活攻略 */}
-        {t(`personalities.${personalityType}.lifeGuide`, { defaultValue: '' }) && (
-          <div className="life-guide-section">
-            <h3 className="section-title">📖 你的专属生活攻略</h3>
-            <div className="life-guide-content">
-              {t(`personalities.${personalityType}.lifeGuide`).split('\n\n').map((paragraph, index) => (
-                <p key={index} className="guide-paragraph">{paragraph}</p>
-              ))}
-            </div>
+        {/* 建议 */}
+        <div className="suggestions">
+          <h3 className="suggestions-title">💝 给你的小建议</h3>
+          <div className="suggestions-content">
+            {result.score <= 30 && (
+              <p>记得在关系中也要给对方成长的空间，不要过度主导哦～ 平等的关系会让你们都更快乐！</p>
+            )}
+            {result.score > 30 && result.score <= 70 && (
+              <p>你的偏好很健康！记得在关系中保持沟通，互相理解和尊重是最重要的～</p>
+            )}
+            {result.score > 70 && (
+              <p>被照顾的感觉很好，但也要记得保持自己的独立性哦～ 健康的关系是相互支持而不是单方面依赖！</p>
+            )}
           </div>
-        )}
+        </div>
       </div>
-
     </div>
   );
 };
