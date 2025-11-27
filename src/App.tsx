@@ -30,20 +30,29 @@ function App() {
 
   // 页面加载时验证激活码或检查测试模式
   useEffect(() => {
-    // 检查是否是测试模式
-    const urlParams = new URLSearchParams(window.location.search);
-    const isTestMode = urlParams.get('test') === 'true';
-    const testScore = urlParams.get('score');
+    // 检查是否是本地开发环境
+    const isLocalhost = window.location.hostname === 'localhost' || 
+                       window.location.hostname === '127.0.0.1' ||
+                       window.location.hostname === '[::1]';
     
-    if (isTestMode && testScore) {
-      // 测试模式：直接显示结果
-      const score = parseInt(testScore, 10);
-      const testResult = calculateAgePreference(score * 2 - 40); // 转换为-40到40的分数
-      setResult(testResult);
-      setScreen('result');
-      setIsActivated(true);
-      setIsValidating(false);
-      return;
+    // 只在本地环境允许测试模式
+    if (isLocalhost) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const isTestMode = urlParams.get('test') === 'true';
+      const testScore = urlParams.get('score');
+      
+      if (isTestMode && testScore) {
+        // 测试模式：直接显示结果
+        const score = parseInt(testScore, 10);
+        if (score >= 0 && score <= 100) {
+          const testResult = calculateAgePreference(score * 2 - 40); // 转换为-40到40的分数
+          setResult(testResult);
+          setScreen('result');
+          setIsActivated(true);
+          setIsValidating(false);
+          return;
+        }
+      }
     }
     
     validateActivation();
